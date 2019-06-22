@@ -14,18 +14,23 @@ class ArduinoViewModel(
     fun setupListener() {
         arduino.setArduinoListener(object : ArduinoListener {
             override fun onArduinoAttached(device: UsbDevice?) {
+                arduino.open(device);
 
             }
 
             override fun onArduinoDetached() {
 
+
             }
 
             override fun onArduinoMessage(bytes: ByteArray?) {
+                return bytes.toInt()
 
             }
 
             override fun onArduinoOpened() {
+                val str = "test"
+                arduino.send(str.toByteArray())
 
             }
 
@@ -39,4 +44,6 @@ class ArduinoViewModel(
         arduino.unsetArduinoListener()
         arduino.close()
     }
+
+
 }
