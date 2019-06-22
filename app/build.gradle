@@ -172,4 +172,8 @@ dependencies {
 
     // Arduino Library
     implementation 'me.aflak.libraries:arduino:1.4.3'
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 19a4a64b0d34c5cbf14680c8cab408fac5d24876
