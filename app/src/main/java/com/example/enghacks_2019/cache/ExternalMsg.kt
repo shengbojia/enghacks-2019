@@ -9,6 +9,7 @@ import java.util.*
     tableName = "msg_table"
 )
 data class ExternalMsg(
-    @PrimaryKey val id: String = UUID.randomUUID()
+    val msgCode:
+    @PrimaryKey val id: String = UUID.randomUUID().toString(),
     @ColumnInfo(name = "time_stamp") val timeStamp: Calendar = Calendar.getInstance()
 )
