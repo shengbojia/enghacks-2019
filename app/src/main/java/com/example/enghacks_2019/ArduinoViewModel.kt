@@ -14,17 +14,19 @@ class ArduinoViewModel(
     fun setupListener() {
         arduino.setArduinoListener(object : ArduinoListener {
             override fun onArduinoAttached(device: UsbDevice?) {
+                println("test")
                 arduino.open(device);
 
             }
 
             override fun onArduinoDetached() {
-
+                println("Arduino detached")
 
             }
 
             override fun onArduinoMessage(bytes: ByteArray?) {
-                return bytes.toInt()
+                println("sending data from arduino: ")
+                println(bytes)
 
             }
 
@@ -35,7 +37,8 @@ class ArduinoViewModel(
             }
 
             override fun onUsbPermissionDenied() {
-
+                println("Premission denied")
+                arduino.reopen()
             }
         })
     }
