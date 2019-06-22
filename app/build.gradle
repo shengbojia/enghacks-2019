@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'kotlin-android-extensions'
 
 repositories {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
@@ -105,6 +106,7 @@ dependencies {
     implementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
     implementation "com.google.guava:guava:$guavaVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$roomVersion"
 
     // Architecture Components
@@ -170,4 +172,8 @@ dependencies {
 
     // Arduino Library
     implementation 'me.aflak.libraries:arduino:1.4.3'
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 19a4a64b0d34c5cbf14680c8cab408fac5d24876
