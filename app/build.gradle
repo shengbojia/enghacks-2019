@@ -167,4 +167,7 @@ dependencies {
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    // Arduino Library
+    compile 'me.aflak.libraries:arduino:1.4.3'
 }
