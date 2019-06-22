@@ -11,9 +11,12 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.hardware.usb.UsbDevice
+import android.widget.TextView
+import me.aflak.arduino.Arduino;
+import me.aflak.arduino.ArduinoListener;
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
