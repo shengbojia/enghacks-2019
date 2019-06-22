@@ -52,4 +52,14 @@ class MsgRepository(
             return@withContext Error(ex)
         }
     }
+
+    companion object {
+        @Volatile
+        private var INSTANCE: MsgRepository? = null
+
+        fun getInstance(msgDao: ExternalMsgDao): Repository =
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: MsgRepository(msgDao).also { INSTANCE = it }
+            }
+    }
 }
