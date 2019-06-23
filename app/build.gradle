@@ -175,4 +175,7 @@ dependencies {
     // Arduino Library
     implementation 'me.aflak.libraries:arduino:1.4.3'
 
+    //Lottie
+    implementation "com.airbnb.android:lottie:3.0.7"
+
 }
