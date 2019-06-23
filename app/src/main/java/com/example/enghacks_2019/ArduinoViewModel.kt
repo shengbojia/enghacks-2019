@@ -16,6 +16,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import me.aflak.arduino.Arduino
 import me.aflak.arduino.ArduinoListener
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieProperty;
 
 class ArduinoViewModel(
     private val repository: Repository,
@@ -36,6 +38,9 @@ class ArduinoViewModel(
 
     private val _popup = MutableLiveData<Int>()
     val popup: LiveData<Int> = _popup
+
+    private val _redAlert = MutableLiveData<Boolean>().apply { value = false }
+    val redAlert: LiveData<Boolean> = _redAlert
 
     /*
     fun getAll() {
@@ -64,6 +69,8 @@ class ArduinoViewModel(
     fun sendBack(signal: String) {
         if (signal == "Wack") {
             return
+        } else if (signal == "R") {
+            _redAlert.value = false;
         }
         arduino.send(signal.toByteArray())
     }
@@ -90,6 +97,10 @@ class ArduinoViewModel(
                         "T" -> {
                             _popup.value = R.string.dialog_reset
                             logRef.add(CloudMessage("Package taken.", Timestamp.now()))
+                            _redAlert.value = true
+
+//                            redAlert.playAnimation()
+//                            redAlert.cancelAnimation()
                         }
                         "D" -> {
                             _popup.value = R.string.dialog_alarm

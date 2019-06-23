@@ -12,6 +12,7 @@ import com.example.enghacks_2019.databinding.FragmentHomeBinding
 import com.example.enghacks_2019.util.getViewModel
 import com.example.enghacks_2019.util.setupSnackbar
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
@@ -118,6 +119,18 @@ class HomeFragment : Fragment() {
             val dialog = builder.create()
             dialog.show()
         })
+    }
+
+    private fun setupAnimation() {
+        viewModel.redAlert.observe(this, Observer {
+            if(it) {
+                red_alert.playAnimation()
+            }
+            else {
+                red_alert.cancelAnimation()
+            }
+        })
+
     }
     /*
 
