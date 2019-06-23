@@ -89,7 +89,7 @@ class ArduinoViewModel(
                     when (msg) {
                         "T" -> {
                             _popup.value = R.string.dialog_reset
-                            logRef.add(CloudMessage("Package taken.", Timestamp.now()))
+                            logRef.add(CloudMessage("Alarm triggered.", Timestamp.now()))
                         }
                         "D" -> {
                             _popup.value = R.string.dialog_alarm
