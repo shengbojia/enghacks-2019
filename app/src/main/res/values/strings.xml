@@ -17,8 +17,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="toast_attached">Attached bois</string>
-    <string name="toast_detach">Pull out game strong</string>
+    <string name="toast_attached">Arduino attached.</string>
+    <string name="toast_detach">Arduino detached.</string>
+
+    <string name="db_arrived">Package arrived.</string>
+    <string name="db_yoinked">Alarm triggered.</string>
+
 
     <string name="dialog_alarm">Package arrived, do you want to turn on the alarm?</string>
     <string name="dialog_reset">Package taken, do you want to reset the state?</string>

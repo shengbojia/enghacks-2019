@@ -9,6 +9,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.enghacks_2019.cache.ExternalMsg
 import com.example.enghacks_2019.cache.Repository
 import com.example.enghacks_2019.cache.Result
+import com.example.enghacks_2019.firebase.CloudMessage
+import com.google.firebase.Timestamp
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import me.aflak.arduino.Arduino
 import me.aflak.arduino.ArduinoListener
@@ -17,6 +21,9 @@ class ArduinoViewModel(
     private val repository: Repository,
     private val arduino: Arduino
 ) : ViewModel() {
+
+    private val db = FirebaseFirestore.getInstance()
+    val logRef = db.collection("LogBook")
 
     private val _toast = MutableLiveData<Int>()
     val toastMsg: LiveData<Int> = _toast
@@ -79,12 +86,18 @@ class ArduinoViewModel(
             override fun onArduinoMessage(bytes: ByteArray?) {
                 val msg = String(bytes!!)
                 viewModelScope.launch {
-                    repository.insert(ExternalMsg(msg))
                     when (msg) {
-                        "T" -> _popup.value = R.string.dialog_reset
-                        "D" -> _popup.value = R.string.dialog_alarm
+                        "T" -> {
+                            _popup.value = R.string.dialog_reset
+                            logRef.add(CloudMessage("Package taken.", Timestamp.now()))
+                        }
+                        "D" -> {
+                            _popup.value = R.string.dialog_alarm
+                            logRef.add(CloudMessage("Package arrived.", Timestamp.now()))
+                        }
                         else -> _popup.value = R.string.dialog_error
                     }
+
                 }
             }
 

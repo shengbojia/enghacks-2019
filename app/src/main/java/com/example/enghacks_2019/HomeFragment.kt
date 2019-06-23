@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.enghacks_2019.databinding.FragmentHomeBinding
 import com.example.enghacks_2019.util.getViewModel
 import com.example.enghacks_2019.util.setupSnackbar
@@ -20,7 +21,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: ArduinoViewModel
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var adapter: MsgAdapter
+  //  private lateinit var adapter: MsgAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,6 +140,11 @@ class HomeFragment : Fragment() {
         when (item.itemId) {
             R.id.action_settings -> {
                 Toast.makeText(this.context, "Yeet", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.action_history -> {
+                val direction = HomeFragmentDirections.actionHomeFragmentToListFragment()
+                findNavController().navigate(direction)
                 true
             }
             else -> false

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:432947239823:android:ec9a64cb194bb192",
         "android_client_info": {
-          "package_name": "com.example.android.architecture.blueprints.todomvvmlivekotlin"
+          "package_name": "com.example.enghacks_2019"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "432947239823-55e1ip1m7ddcnddf8lakeqeid078nmvl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.architecture.blueprints.todomvvmlivekotlin",
+            "package_name": "com.example.enghacks_2019",
             "certificate_hash": "d24684e1d71eeccec077ed76d95e641a905d8c01"
           }
         },
@@ -47,7 +47,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:432947239823:android:d82d5b9333ff1e91",
         "android_client_info": {
-          "package_name": "com.example.android.architecture.blueprints.todomvvmlivekotlin.mock"
+          "package_name": "com.example.enghacks_2019.mock"
         }
       },
       "oauth_client": [
@@ -55,7 +55,7 @@
           "client_id": "432947239823-lbliqvrv9rh4ho03gfdqhscgqhoge7hs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.architecture.blueprints.todomvvmlivekotlin.mock",
+            "package_name": "com.example.enghacks_2019.mock",
             "certificate_hash": "d24684e1d71eeccec077ed76d95e641a905d8c01"
           }
         },
