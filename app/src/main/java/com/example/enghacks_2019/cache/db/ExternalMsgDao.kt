@@ -18,6 +18,6 @@ interface ExternalMsgDao {
     @Query("SELECT * FROM msg_table ORDER BY time_stamp DESC LIMIT 1")
     fun getLatest(): ExternalMsg?
 
-    @Query("SELECT * FROM msg_table ORDER BY time_stamp DESC")
+    @Query("SELECT * FROM msg_table ORDER BY time_stamp ASC")
     fun getAll(): List<ExternalMsg>
 }
