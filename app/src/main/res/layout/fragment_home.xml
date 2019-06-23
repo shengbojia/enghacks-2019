@@ -84,6 +84,24 @@
                 android:layout_margin="16dp"
                 android:src="@drawable/ic_menu_send"/>
 
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/red_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                app:lottie_rawRes="@raw/red_alert"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lock_animation"
+                android:layout_width="match_parent"
+                android:layout_height="392dp"
+                android:gravity="center"
+                app:lottie_rawRes="@raw/lock_animation"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>
