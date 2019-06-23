@@ -99,8 +99,7 @@ class ArduinoViewModel(
                             logRef.add(CloudMessage("Package taken.", Timestamp.now()))
                             _redAlert.value = true
 
-//                            redAlert.playAnimation()
-//                            redAlert.cancelAnimation()
+
                         }
                         "D" -> {
                             _popup.value = R.string.dialog_alarm
