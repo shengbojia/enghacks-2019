@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 repositories {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
@@ -107,6 +108,7 @@ dependencies {
     implementation "com.google.guava:guava:$guavaVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:5.0.0'
     kapt "androidx.room:room-compiler:$roomVersion"
 
     // Architecture Components
@@ -174,4 +176,3 @@ dependencies {
     implementation 'me.aflak.libraries:arduino:1.4.3'
 
 }
-

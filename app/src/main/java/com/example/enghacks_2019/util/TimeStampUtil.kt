@@ -1,30 +1,10 @@
 package com.example.enghacks_2019.util
-/*
-import android.widget.TextView
-import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.example.enghacks_2019.MsgAdapter
-import com.example.enghacks_2019.cache.ExternalMsg
+
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-@BindingAdapter("app:items")
-fun setItems(view: RecyclerView, itemsToDisplay: List<ExternalMsg>?) {
-    with(view.adapter as MsgAdapter) {
-        submitList(itemsToDisplay)
-    }
-}
-
-@BindingAdapter("app:messageToDisplay")
-fun setMessage(view: TextView, msg: ExternalMsg?) {
-    view.text = msg?.msgCode
-}
-
-@BindingAdapter("app:timeStamp")
-fun setTimeStamp(view: TextView, msg: ExternalMsg?) {
-
-    val date = msg?.timeStamp?.time ?: Date(0)
+fun convertDateToString(date: Date): String {
 
     val currentTime = Calendar.getInstance()
 
@@ -36,7 +16,7 @@ fun setTimeStamp(view: TextView, msg: ExternalMsg?) {
 
     val dateText = "${dateFormat.format(date)} - ${DateFormat.getTimeInstance(DateFormat.SHORT).format(date)}"
 
-    view.text = dateText
+   return dateText
 
 }
 
@@ -70,6 +50,3 @@ private fun dateRelativeToCalendar(date: Date, calendar: Calendar): DateStatus {
         return DateStatus.SAME_WEEK
     }
 }
-
-
-*/
